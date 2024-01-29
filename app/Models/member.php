@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model as Model;
 /**
  * Class member
  * @package App\Models
- * @version January 29, 2024, 4:23 pm UTC
+ * @version January 29, 2024, 7:58 pm UTC
  *
  * @property \Illuminate\Database\Eloquent\Collection $bookings
  * @property string $firstname
