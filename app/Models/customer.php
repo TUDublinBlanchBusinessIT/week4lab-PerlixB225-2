@@ -15,6 +15,8 @@ class customer extends Model
     public function setSurname($sn) 
     { 
         $this->attributes['surname']=$sn; 
-    } 
+    }
+
+    
 } 
 ?>

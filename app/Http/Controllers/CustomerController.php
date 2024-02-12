@@ -12,9 +12,26 @@ class CustomerController extends Controller
 
     public function create(Request $request) 
     { 
-            $customer = new Customer(); //creates a new instance of the customer object
-            $customer->setFirstname($request->firstname);//sets the attributes
-            $customer->setSurname($request->surname);//sets the attributes
-            $customer->save();//persists the Customer object to the database
-    } 
+            //instantiate a new Customer object from the Model class
+            $customer = new Customer();
+            //call setter on the object passing values from the View
+            $customer->setFirstname($request->firstname);
+            $customer->setSurname($request->surname);
+            //save the object which will create a new customer in the DB
+            $customer->save(); 
+    }
+
+      public function edit($id)
+    {
+         $customer = Customer::find($id);
+         return view('customers.edit')->with('customer', $customer);
+    }
+
+    public function update(Request $request)
+    {
+        $customer = Customer::find($request->id);
+        $customer->setFirstname($request->firstname);
+        $customer->setSurname($request->surname);
+        $customer->save();
+    }
 } 
